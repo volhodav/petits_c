@@ -1,0 +1,6 @@
+Hello World.
+This is a test file that has been created to test the acronym program.
+Correction de l'allocation dynamique pour la structure Acronym.
+Ajout d'une vérification pour s'assurer que l'allocation dynamique a réussi.
+Correction des conditions dans la boucle while pour vérifier correctement chaque caractère.
+Modification de acronym->acronym pour pointer vers la lettre suivant le caractère de ponctuation.
