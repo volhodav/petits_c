@@ -10,7 +10,7 @@ Ce projet est sous licence MIT. Vous êtes libre d'utiliser, de modifier et de d
 
 Voici une liste de certains des projets que vous trouverez dans ce dépôt :
 
-1. **./acronyms** : Un generateur d'acronymes qui lit un fichier et génère des acronymes pour chaque phrase. 
+1. **./acronym** : Un generateur d'acronymes qui lit un fichier et génère des acronymes pour chaque phrase. 
 
 ## Comment Utiliser
 
