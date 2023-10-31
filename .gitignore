@@ -1,0 +1,12 @@
+# Ignore the build directory
+cmake-build-debug/
+
+# Ignore all compiled binaries
+*.o
+*.exe
+*.out
+
+# Ignore all temporary files created by text editors
+*~
+*.swp
+*.swo
