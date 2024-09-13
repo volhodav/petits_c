@@ -1,3 +1,5 @@
+[Retour à la Liste des Projets](../README.md)
+
 # Générateur d'Acronymes
 
 **Auteur :** pmnv
@@ -57,3 +59,5 @@ Ce code est fourni sous une licence MIT. N'hésitez pas à l'utiliser et à le m
 Les contributions sont les bienvenues. Veuillez soumettre des problèmes ou des demandes de tirage si vous avez des améliorations ou des suggestions.
 
 ---
+
+[Retour à la Liste des Projets](../README.md)
