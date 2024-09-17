@@ -12,6 +12,7 @@ Voici une liste de certains des projets que vous trouverez dans ce dépôt :
 
 1. **./acronym** : Un generateur d'acronymes qui lit un fichier et génère des acronymes pour chaque phrase. [Readme](./acronym/README.md)
 2. **./identiques** : Un programme qui lit un fichier et trouve les mots identiques. [Readme](./identiques/README.md)
+3. **./deleter ** : Un programme qui lit un fichier et supprime les mots identiques. [Readme](./deleter/README.md)
 
 ## Comment Utiliser
 
