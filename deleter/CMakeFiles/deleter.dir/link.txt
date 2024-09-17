@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/deleter.dir/main.c.o -o deleter
