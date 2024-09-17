@@ -1,22 +1,29 @@
 /*
 * Name       : deleter
-* Version    : 0.0.1
-* this app will be reading the output that identiques provides and then going to the same file that identiqes has read and removing all the duplicate words that identiqus has found
+* Version    : 0.0.2
 *
-* so for instance we are running the command as such
-*
-* $ ./deleter `./identiques ~/.tt/words/fr`
+* This app will be reading the output that another app called identiques provides and then removing all the duplicate words that identiqus has found in the provided file
 *
 * deleter will launch identiques and will receive the output from identiques
 * deleter will process the output by storing the list of words in an array that it has received from identiques
 * deleter will then go through each word in the array, look for it in the file and delete all duplicates of that word leaving only one instance of the word
 * deleter will then again go through all the words in the file making sure no duplicates are left
 * deleter will then write the file back to the original file path
+* Deleter's output will be as one continuous string of words separated by an empty space
 *
+* Command to run deleter:
 *
-* @param file_path
-* @return char*
+* insert into command : (-iden /path/to/identiques) location of identiques location
+* insert into command : (-dup /path/to/duplicates/file) location of file to be processed by identiques
+* insert into command : (-o /path/to/output/file) location of the output file of deleter
+*
+* so to run deleter you would need the following parameters included in the command :
+*
+* $ ./deleter --iden /home/yegor/Programmes/identiques --dup /home/yegor/.tt/words/fr -o /your/output/file
+*
 */
+
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -51,7 +58,7 @@ void add_word(InputArray *input_array, const char *word) {
 }
 
 void read_output_from_identiques(const char *command, InputArray *input_array) {
-    FILE *fp = fopen(command, "r");
+    FILE *fp = popen(command, "r");
     if (fp == NULL)
     {
         perror("Failed to launch identiques");
@@ -64,16 +71,16 @@ void read_output_from_identiques(const char *command, InputArray *input_array) {
         char *colon_pos = strchr(line, ':');
         if (colon_pos != NULL)
         {
-            colon_pos = '\0';
+            *colon_pos = '\0';
             add_word(input_array, line);
         }
     }
 
-    fclose(fp);
+    pclose(fp);
 
 }
 
-void remove_duplicates(const char *file_path, const InputArray *input_array) {
+void remove_duplicates(const char *file_path, const InputArray *input_array, const char *output_file_path) {
     FILE *file = fopen(file_path, "r");
     if (file == NULL)
     {
@@ -85,7 +92,7 @@ void remove_duplicates(const char *file_path, const InputArray *input_array) {
     char buffer[WORD_SIZE];
     int is_duplicate;
 
-    while (fscanf(file, "%1023s", buffer) == 1)
+    while (fscanf(file, "%99s", buffer) == 1)
     {
         is_duplicate = 0;
         for (int i = 0; i < input_array->count; i++)
@@ -120,7 +127,7 @@ void remove_duplicates(const char *file_path, const InputArray *input_array) {
 
     fclose(file);
 
-    file = fopen(file_path, "w");
+    file = fopen(output_file_path, "w");
     if (file == NULL)
     {
         perror("Failed to open file for writing");
@@ -129,21 +136,72 @@ void remove_duplicates(const char *file_path, const InputArray *input_array) {
 
     for (int i = 0; i < unique_words.count; i++)
     {
-        fprintf(file, "%s\n", unique_words.words[i]);
+        fprintf(file, "%s", unique_words.words[i]);
+        if (i < unique_words.count - 1)
+        {
+            fprintf(file, " ");
+        }
     }
 
     fclose(file);
 }
 
+void print_help(const char *program_name) {
+    printf("To run deleter, you need to provide the required flags that are listed below.\n");
+    printf("================================\n");
+    printf(" Required flags\n");
+    printf("================================\n");
+    printf(" -iden   :   the path to `identiques` program.\n");
+    printf(" -dup    :   the path to the file that containing the duplicates.\n");
+    printf(" -o      :   the path to the output file.\n");
+    printf(" -h or --help   :   display this help message.\n");
+    printf("\n");
+    printf(" Usage: %s -iden /path/to/identiques -dup /path/to/duplicates -o /path/to/output\n", program_name);
+}
+
 int main(int argc, char *argv[]) {
-    if (argc != 2)
+    if (argc == 2 && (strcmp(argv[1], "-h") == 0 ||  strcmp(argv[1], "--help") == 0))
     {
-        fprintf(stderr, "Usage: %s <file_path>\n", argv[0]);
+        print_help(argv[0]);
+        exit(0);
+    }
+
+    if (argc != 7)
+    {
+        fprintf(stderr, "Usage: %s -iden /path/to/identiques -dup /path/to/duplicates -o /path/to/output\n", argv[0]);
         exit(1);
     }
 
+    const char *identiques_path = NULL;
+    const char *duplicates_file_path = NULL;
+    const char *output_file_path = NULL;
+
+    for (int i = 1; i < argc; i++)
+    {
+        if (strcmp(argv[i], "-iden") == 0)
+        {
+            identiques_path = argv[++i];
+        } else if (strcmp(argv[i], "-dup") == 0)
+        {
+            duplicates_file_path = argv[++i];
+        } else if (strcmp(argv[i], "-o") == 0)
+        {
+            output_file_path = argv[++i];
+        }
+    }
+
+    if (!identiques_path || !duplicates_file_path || !output_file_path)
+    {
+        fprintf(stderr, "Invalid arguments! Use : -h to reference help information\n");
+        exit(1);
+    }
+
+    char command[BUFFER_SIZE];
+    snprintf(command, sizeof(command), "%s %s", identiques_path, duplicates_file_path);
+
     InputArray input_array = { .count = 0 };
-    read_output_from_identiques(argv[1], &input_array);
-    remove_duplicates("./identiques ~/.tt/words/fr2", &input_array);
+    read_output_from_identiques(command, &input_array);
+    remove_duplicates(duplicates_file_path, &input_array, output_file_path);
+
     return 0;
 }
