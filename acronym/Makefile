@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/yegor/Github/petits_c && $(CMAKE_COMMAND) -E cmake_progress_start /home/yegor/Github/petits_c/CMakeFiles /home/yegor/Github/petits_c/identiques//CMakeFiles/progress.marks
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 identiques/all
+	cd /home/yegor/Github/petits_c && $(CMAKE_COMMAND) -E cmake_progress_start /home/yegor/Github/petits_c/CMakeFiles /home/yegor/Github/petits_c/acronym//CMakeFiles/progress.marks
+	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 acronym/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yegor/Github/petits_c/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 identiques/clean
+	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 acronym/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,12 +103,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 identiques/preinstall
+	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 acronym/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 identiques/preinstall
+	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 acronym/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -117,42 +117,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-identiques/CMakeFiles/identiques.dir/rule:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 identiques/CMakeFiles/identiques.dir/rule
-.PHONY : identiques/CMakeFiles/identiques.dir/rule
+acronym/CMakeFiles/acronym.dir/rule:
+	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 acronym/CMakeFiles/acronym.dir/rule
+.PHONY : acronym/CMakeFiles/acronym.dir/rule
 
 # Convenience name for target.
-identiques: identiques/CMakeFiles/identiques.dir/rule
-.PHONY : identiques
+acronym: acronym/CMakeFiles/acronym.dir/rule
+.PHONY : acronym
 
 # fast build rule for target.
-identiques/fast:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f identiques/CMakeFiles/identiques.dir/build.make identiques/CMakeFiles/identiques.dir/build
-.PHONY : identiques/fast
+acronym/fast:
+	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f acronym/CMakeFiles/acronym.dir/build.make acronym/CMakeFiles/acronym.dir/build
+.PHONY : acronym/fast
 
-identiques.o: identiques.c.o
-.PHONY : identiques.o
+acronym.o: acronym.c.o
+.PHONY : acronym.o
 
 # target to build an object file
-identiques.c.o:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f identiques/CMakeFiles/identiques.dir/build.make identiques/CMakeFiles/identiques.dir/identiques.c.o
-.PHONY : identiques.c.o
+acronym.c.o:
+	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f acronym/CMakeFiles/acronym.dir/build.make acronym/CMakeFiles/acronym.dir/acronym.c.o
+.PHONY : acronym.c.o
 
-identiques.i: identiques.c.i
-.PHONY : identiques.i
+acronym.i: acronym.c.i
+.PHONY : acronym.i
 
 # target to preprocess a source file
-identiques.c.i:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f identiques/CMakeFiles/identiques.dir/build.make identiques/CMakeFiles/identiques.dir/identiques.c.i
-.PHONY : identiques.c.i
+acronym.c.i:
+	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f acronym/CMakeFiles/acronym.dir/build.make acronym/CMakeFiles/acronym.dir/acronym.c.i
+.PHONY : acronym.c.i
 
-identiques.s: identiques.c.s
-.PHONY : identiques.s
+acronym.s: acronym.c.s
+.PHONY : acronym.s
 
 # target to generate assembly for a file
-identiques.c.s:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f identiques/CMakeFiles/identiques.dir/build.make identiques/CMakeFiles/identiques.dir/identiques.c.s
-.PHONY : identiques.c.s
+acronym.c.s:
+	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f acronym/CMakeFiles/acronym.dir/build.make acronym/CMakeFiles/acronym.dir/acronym.c.s
+.PHONY : acronym.c.s
 
 # Help Target
 help:
@@ -162,10 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... identiques"
-	@echo "... identiques.o"
-	@echo "... identiques.i"
-	@echo "... identiques.s"
+	@echo "... acronym"
+	@echo "... acronym.o"
+	@echo "... acronym.i"
+	@echo "... acronym.s"
 .PHONY : help
 
 

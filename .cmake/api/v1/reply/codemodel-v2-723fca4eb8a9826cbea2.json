@@ -1,0 +1,195 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "deleter",
+					"jsonFile" : "directory-deleter-e5573390e92b5cd79fd9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "deleter",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "empty_line_remover",
+					"jsonFile" : "directory-empty_line_remover-6a29b90d82a5c79a692a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "empty_line_remover",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "identiques",
+					"jsonFile" : "directory-identiques-6b2d9b7e10bf16bc5240.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "identiques",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "acronym",
+					"jsonFile" : "directory-acronym-b67fbd9d1fea5d1f337c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "acronym",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "petits_c"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "deleter",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "empty_line_remover",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "identiques",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "acronym",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 4,
+					"id" : "acronym::@316f0610661bd098feb5",
+					"jsonFile" : "target-acronym-746e1a43e1efd90bd54b.json",
+					"name" : "acronym",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "deleter::@c95e539dc2ef1e3dcda7",
+					"jsonFile" : "target-deleter-344484d172b2225559ce.json",
+					"name" : "deleter",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "empty_line_remover::@6aa4dcc38c062d2570a8",
+					"jsonFile" : "target-empty_line_remover-64612fbfdc291a81bd20.json",
+					"name" : "empty_line_remover",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "identiques::@10692d14d77cb2af87e7",
+					"jsonFile" : "target-identiques-539ad9551f36ed338249.json",
+					"name" : "identiques",
+					"projectIndex" : 3
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/yegor/Github/petits_c",
+		"source" : "/home/yegor/Github/petits_c"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

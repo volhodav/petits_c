@@ -1,0 +1,14 @@
+/home/yegor/Github/petits_c/CMakeFiles/edit_cache.dir
+/home/yegor/Github/petits_c/CMakeFiles/rebuild_cache.dir
+/home/yegor/Github/petits_c/deleter/CMakeFiles/deleter.dir
+/home/yegor/Github/petits_c/deleter/CMakeFiles/edit_cache.dir
+/home/yegor/Github/petits_c/deleter/CMakeFiles/rebuild_cache.dir
+/home/yegor/Github/petits_c/empty_line_remover/CMakeFiles/empty_line_remover.dir
+/home/yegor/Github/petits_c/empty_line_remover/CMakeFiles/edit_cache.dir
+/home/yegor/Github/petits_c/empty_line_remover/CMakeFiles/rebuild_cache.dir
+/home/yegor/Github/petits_c/identiques/CMakeFiles/identiques.dir
+/home/yegor/Github/petits_c/identiques/CMakeFiles/edit_cache.dir
+/home/yegor/Github/petits_c/identiques/CMakeFiles/rebuild_cache.dir
+/home/yegor/Github/petits_c/acronym/CMakeFiles/acronym.dir
+/home/yegor/Github/petits_c/acronym/CMakeFiles/edit_cache.dir
+/home/yegor/Github/petits_c/acronym/CMakeFiles/rebuild_cache.dir

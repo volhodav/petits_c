@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/acronym.dir/acronym.c.o -o acronym

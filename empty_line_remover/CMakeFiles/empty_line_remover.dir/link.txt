@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/empty_line_remover.dir/main.c.o -o empty_line_remover

@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/yegor/Github/petits_c && $(CMAKE_COMMAND) -E cmake_progress_start /home/yegor/Github/petits_c/CMakeFiles /home/yegor/Github/petits_c/identiques//CMakeFiles/progress.marks
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 identiques/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yegor/Github/petits_c/CMakeFiles /home/yegor/Github/petits_c//CMakeFiles/progress.marks
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yegor/Github/petits_c/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 identiques/clean
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
 .PHONY : clean
 
 # The main clean target
@@ -103,56 +103,70 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 identiques/preinstall
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 identiques/preinstall
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/yegor/Github/petits_c && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-identiques/CMakeFiles/identiques.dir/rule:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 identiques/CMakeFiles/identiques.dir/rule
-.PHONY : identiques/CMakeFiles/identiques.dir/rule
+#=============================================================================
+# Target rules for targets named deleter
 
-# Convenience name for target.
-identiques: identiques/CMakeFiles/identiques.dir/rule
+# Build rule for target.
+deleter: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 deleter
+.PHONY : deleter
+
+# fast build rule for target.
+deleter/fast:
+	$(MAKE) $(MAKESILENT) -f deleter/CMakeFiles/deleter.dir/build.make deleter/CMakeFiles/deleter.dir/build
+.PHONY : deleter/fast
+
+#=============================================================================
+# Target rules for targets named empty_line_remover
+
+# Build rule for target.
+empty_line_remover: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 empty_line_remover
+.PHONY : empty_line_remover
+
+# fast build rule for target.
+empty_line_remover/fast:
+	$(MAKE) $(MAKESILENT) -f empty_line_remover/CMakeFiles/empty_line_remover.dir/build.make empty_line_remover/CMakeFiles/empty_line_remover.dir/build
+.PHONY : empty_line_remover/fast
+
+#=============================================================================
+# Target rules for targets named identiques
+
+# Build rule for target.
+identiques: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 identiques
 .PHONY : identiques
 
 # fast build rule for target.
 identiques/fast:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f identiques/CMakeFiles/identiques.dir/build.make identiques/CMakeFiles/identiques.dir/build
+	$(MAKE) $(MAKESILENT) -f identiques/CMakeFiles/identiques.dir/build.make identiques/CMakeFiles/identiques.dir/build
 .PHONY : identiques/fast
 
-identiques.o: identiques.c.o
-.PHONY : identiques.o
+#=============================================================================
+# Target rules for targets named acronym
 
-# target to build an object file
-identiques.c.o:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f identiques/CMakeFiles/identiques.dir/build.make identiques/CMakeFiles/identiques.dir/identiques.c.o
-.PHONY : identiques.c.o
+# Build rule for target.
+acronym: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 acronym
+.PHONY : acronym
 
-identiques.i: identiques.c.i
-.PHONY : identiques.i
-
-# target to preprocess a source file
-identiques.c.i:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f identiques/CMakeFiles/identiques.dir/build.make identiques/CMakeFiles/identiques.dir/identiques.c.i
-.PHONY : identiques.c.i
-
-identiques.s: identiques.c.s
-.PHONY : identiques.s
-
-# target to generate assembly for a file
-identiques.c.s:
-	cd /home/yegor/Github/petits_c && $(MAKE) $(MAKESILENT) -f identiques/CMakeFiles/identiques.dir/build.make identiques/CMakeFiles/identiques.dir/identiques.c.s
-.PHONY : identiques.c.s
+# fast build rule for target.
+acronym/fast:
+	$(MAKE) $(MAKESILENT) -f acronym/CMakeFiles/acronym.dir/build.make acronym/CMakeFiles/acronym.dir/build
+.PHONY : acronym/fast
 
 # Help Target
 help:
@@ -162,10 +176,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... acronym"
+	@echo "... deleter"
+	@echo "... empty_line_remover"
 	@echo "... identiques"
-	@echo "... identiques.o"
-	@echo "... identiques.i"
-	@echo "... identiques.s"
 .PHONY : help
 
 
@@ -177,6 +191,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/yegor/Github/petits_c && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
